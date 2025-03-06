@@ -40,6 +40,10 @@ theme:
   icon:
     repo: fontawesome/brands/github  # 仓库图标类型
 
+# 自定义css
+extra_css:
+  - stylesheets/extra.css
+
 # ===== 视觉增强插件 =====
 plugins:
   - search:                   # 必须保留的搜索功能

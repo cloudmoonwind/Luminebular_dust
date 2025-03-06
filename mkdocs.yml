@@ -1,0 +1,69 @@
+site_name: Luminebular Dust
+site_url: https://cloudmoonwind.github.io/Luminebular_dust/
+      
+theme:
+  name: material
+  # 功能增强
+  features:
+    - content.code.annotate   # 启用自定义颜色功能
+    - navigation.tabs         # 启用顶部标签导航
+    - navigation.sections     # 启用侧边栏章节导航
+    - navigation.expand       # 启用侧边栏展开
+    - toc.integrate           # 页面内目录
+    - content.tooltips        # 启用悬浮提示
+    - content.code.copy       # 启用代码块复制按钮
+    - header.autohide         # 启用滚动隐藏导航栏
+  # 自定义调色板
+  palette:
+    - scheme: default   # 可选 'default'（浅色）或 'slate'（深色）
+      primary: "b4f0fb"  # 主题色(导航栏/按钮),直接使用十六进制
+      accent: "#ff7f50"   # 强调色(链接/图标),珊瑚色作为对比色
+      toggle:
+        icon: material/weather-night  # 图标
+        name: 切换暗黑模式
+    - scheme: slate
+      primary: "b4f0fb"   # 保持主色一致性
+      accent: "#b4f0fb"   # 暗模式下使用同色系
+      toggle: 
+        icon: material/weather-sunny
+        name: 切换明亮模式
+
+
+  # 字体配置 (Google Fonts)
+  font:
+    text: Roboto              # 正文字体
+    code: Fira Code           # 代码字体
+  
+  # 图标库
+  icon:
+    repo: fontawesome/brands/github  # 仓库图标类型
+
+# ===== 视觉增强插件 =====
+plugins:
+  - search:                   # 必须保留的搜索功能
+      lang: zh
+      separator: '[\s\-]+'
+  
+# ===== 导航菜单结构 =====
+nav:
+  - 首页: index.md
+  - 关于: about.md
+  - 指南:
+      - 介绍: guide/酒馆界面教程.md
+      - 资源: guide/角色卡.md
+
+# ===== 扩展功能 =====
+extra:
+  social:                    # 社交图标链接
+    - icon: fontawesome/brands/github
+      link: https://github.com/cloudmoonwind
+
+# ===== 样式微调 =====
+markdown_extensions:
+  - attr_list                # 允许添加CSS类
+  - pymdownx.highlight:      # 代码高亮
+      anchor_linenums: true
+  - pymdownx.superfences     # 高级代码块
+  - pymdownx.emoji:          # 表情符号
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

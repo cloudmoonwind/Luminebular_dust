@@ -6,8 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout main branch
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -18,7 +19,12 @@ jobs:
       - name: Install dependencies
         run: pip install mkdocs-material
 
-      - name: Build and Deploy
+      - name: Build documentation
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
         run: |
-          mkdocs build
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your GitHub Username"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/cloudmoonwind/Luminebular_dust.git
           mkdocs gh-deploy --force

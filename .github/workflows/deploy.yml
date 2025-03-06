@@ -1,9 +1,7 @@
 name: Manual Deploy MkDocs
 
 on:
-  # 只有手动触发，不会自动触发
   workflow_dispatch:
-    # 可以添加输入参数，让你在触发时提供额外信息（可选）
     inputs:
       deploy_message:
         description: '部署说明'
@@ -15,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: main  # 确保检出main分支的最新内容
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,8 +25,12 @@ jobs:
           pip install mkdocs mkdocs-material
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       
-      - name: Deploy
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          mkdocs gh-deploy --force
+      - name: Build site
+        run: mkdocs build
+      
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site  # MkDocs 生成的站点目录
+          branch: gh-pages
+          clean: true  # 自动清理旧文件

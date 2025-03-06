@@ -8,10 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.PAT }}  # 使用你的个人访问令牌
       
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
@@ -23,9 +21,4 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       
       - name: Deploy
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          mkdocs gh-deploy --force
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}  # 使用访问令牌进行部署
+        run: mkdocs gh-deploy --force

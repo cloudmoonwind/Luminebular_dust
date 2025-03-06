@@ -1,6 +1,8 @@
 site_name: Luminebular Dust
 site_url: https://cloudmoonwind.github.io/Luminebular_dust/
-      
+repo_url: https://github.com/cloudmoonwind/Luminebular_dust
+repo_name: cloudmoong
+     
 theme:
   name: material
   # 功能增强

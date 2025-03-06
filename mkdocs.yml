@@ -1,7 +1,7 @@
 site_name: Luminebular Dust
-site_url: https://cloudmoonwind.github.io/Luminebular_dust/
+site_url: https://cloudmoonwind.github.io/Luminebular_dust/use_directory_urls:false
 repo_url: https://github.com/cloudmoonwind/Luminebular_dust
-repo_name: cloudmoong
+repo_name: cloudmoon
      
 theme:
   name: material
@@ -18,13 +18,13 @@ theme:
   # 自定义调色板
   palette:
     - scheme: default   # 可选 'default'（浅色）或 'slate'（深色）
-      primary: "b4f0fb"  # 主题色(导航栏/按钮),直接使用十六进制
+      primary: "#b4f0fb"  # 主题色(导航栏/按钮),直接使用十六进制
       accent: "#ff7f50"   # 强调色(链接/图标),珊瑚色作为对比色
       toggle:
         icon: material/weather-night  # 图标
         name: 切换暗黑模式
     - scheme: slate
-      primary: "b4f0fb"   # 保持主色一致性
+      primary: "#b4f0fb"   # 保持主色一致性
       accent: "#b4f0fb"   # 暗模式下使用同色系
       toggle: 
         icon: material/weather-sunny
@@ -67,5 +67,5 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.superfences     # 高级代码块
   - pymdownx.emoji:          # 表情符号
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

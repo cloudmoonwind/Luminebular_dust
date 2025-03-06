@@ -1,0 +1,24 @@
+name: Deploy MkDocs
+
+on:
+  workflow_dispatch:  # 需要手动触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install mkdocs-material
+
+      - name: Build and Deploy
+        run: |
+          mkdocs build
+          mkdocs gh-deploy --force

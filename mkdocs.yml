@@ -57,6 +57,10 @@ nav:
   - 指南:
       - 介绍: guide/酒馆界面教程.md
       - 资源: guide/角色卡.md
+  - 设定集: 
+      - 时间轴: Time.md
+      - 空间轴: Space.md
+      - 第一章: Chapter_1.md
 
 # ===== 扩展功能 =====
 extra:
